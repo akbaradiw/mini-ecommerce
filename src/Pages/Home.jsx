@@ -54,7 +54,7 @@ const handleOpen = () => {
 
   return (
     <div>
-      <Navbar  />
+      <Navbar/>
       <div className="fixed left-3 bottom-10">
         <button onClick={() => setOpen(true)}>
           <ShoppingBagIcon className="size-10 fixed" />
@@ -70,10 +70,10 @@ const handleOpen = () => {
         visibility={open}
 
          />
-      <div className=" grid  gap-6 grid-cols-3  pt-14 pb-14 px-20">
+      <div className=" grid  gap-6 grid-cols-3 pt-24 pb-14 px-20">
         {products.map((item) => (
           <div
-            className="border-2  border-cyan-400 rounded-lg py-5 px-5 m-1 "
+            className="border-2  border-cyan-400 rounded-lg py-6 px-5 m-1 "
             key={item.id}
           >
             <div className="divide-y divide-cyan-400">
