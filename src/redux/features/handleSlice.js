@@ -11,14 +11,7 @@ export const handleSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            const item = state.item.find(
-              (item) => item._id === action.payload._id
-            );
-            if (item) {
-              item.quantity += action.payload.quantity;
-            } else {
-              state.item.push(action.payload);
-            }
+            state.item.push(action.payload)
         }
     },
 })
