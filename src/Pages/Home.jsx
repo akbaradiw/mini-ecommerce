@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Component/Navbar";
-import { getProduct } from "../redux/features/productSlice";
+import { getProduct, filterProduct } from "../redux/features/productSlice";
 import Cart from "../Component/Cart";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import "./style.css";
+
 
 
 const Home = () => {
@@ -14,13 +15,17 @@ const Home = () => {
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState([]);
 
-const handleOpen = () => {
-  setOpen(!open);
+// const handleOpen = () => {
+//   setOpen(!open);
+// }
+
+const handleFilter = (e) => {
+  dispatch(filterProduct(e.target.value));
 }
 
   useEffect(() => {
     dispatch(getProduct());
-  }, []);
+  }, [cart]);
 
   const addProduct = (data) => {
     const newProduct = {
@@ -30,6 +35,9 @@ const handleOpen = () => {
     setCart([...cart, newProduct]);
     console.log(data);
   };
+
+ 
+
 
   const deleteProduct = (id) => {
     setCart((oldState) => {
@@ -55,6 +63,13 @@ const handleOpen = () => {
   return (
     <div>
       <Navbar/>
+      <select className="fixed right-3 top-10" onChange={(e) => handleFilter(e.target.value)}>
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="jewelery">Jewelery</option>
+        <option value="men's clothing">Men's clothing</option>
+        <option value="women's clothing">Women's clothing</option>
+      </select>
       <div className="fixed left-3 bottom-10">
         <button onClick={() => setOpen(true)}>
           <ShoppingBagIcon className="size-10 fixed" />
@@ -68,7 +83,6 @@ const handleOpen = () => {
         handleQuantity={handleQuantity}
         deleteProduct={deleteProduct}
         visibility={open}
-
          />
       <div className=" grid  gap-6 grid-cols-3 pt-24 pb-14 px-20">
         {products.map((item) => (

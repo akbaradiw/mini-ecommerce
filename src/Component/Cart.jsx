@@ -8,6 +8,7 @@ const Cart = ({
   onClose,
   deleteProduct,
   handleQuantity,
+  handleCategory,
 }) => {
   const [modalOpen, setModalOpen] = React.useState(false);
 

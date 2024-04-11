@@ -1,0 +1,72 @@
+export const instrumentData = [
+    {
+        id: 1,
+        name: 'Gibson Les Paul',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 1200,
+        brand: 'Gibson',
+    },
+    {
+        id: 2,
+        name: 'Fender Telecaster',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 800,
+        brand: 'Fender',
+    },
+    {
+        id: 3,
+        name: 'Jackson Flying V',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 900,
+        brand: 'Jackson',
+    },
+    {
+        id: 4,
+        name: "Epiphone SG",
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 1000,
+        brand: 'Epiphone',
+    },
+    {
+        id: 5,
+        name: 'Fender Stratocaster',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 820,
+        brand: 'Fender',
+    },
+    {
+        id: 6,
+        name: 'BC Rich Iron Bird',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 7700,
+        brand: 'BC Rich',
+    },
+    {
+        id: 7,
+        name: 'Ibanez RG',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 811,
+        brand: 'Ibanez',
+    },
+    {
+        id: 8,
+        name: 'Gibson Firebird',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 991,
+        brand: 'Gibson ',
+    },
+    {
+        id: 9,
+        name: 'Epiphone Explorer',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 811,
+        brand: 'Epiphone',
+    },
+    {
+        id: 10,
+        name: 'Ibanez prestige',
+        description: 'Guitars are instruments that produce sound by vibrating a metal or plastic blade.',
+        price: 811,
+        brand: 'Ibanez',
+    }
+]
