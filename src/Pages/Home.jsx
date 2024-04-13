@@ -14,13 +14,15 @@ const Home = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState([]);
+  const [filter , setFilter] = useState([]);
 
 // const handleOpen = () => {
 //   setOpen(!open);
 // }
 
 const handleFilter = (e) => {
-  dispatch(filterProduct(e.target.value));
+  dispatch(getProduct(e.target.value));
+  setFilter(e.target.value)
 }
 
   useEffect(() => {
@@ -63,12 +65,12 @@ const handleFilter = (e) => {
   return (
     <div>
       <Navbar/>
-      <select className="fixed right-3 top-10" onChange={(e) => handleFilter(e.target.value)}>
-        <option value="all">All</option>
-        <option value="electronics">Electronics</option>
-        <option value="jewelery">Jewelery</option>
-        <option value="men's clothing">Men's clothing</option>
-        <option value="women's clothing">Women's clothing</option>
+      <select value={filter} className="fixed right-3 top-10" onChange={(e) => handleFilter(e.target.value)}>
+        <option value={""}>All</option>
+        <option value={"electronics"}>Electronics</option>
+        <option value={"jewelery"}>Jewelery</option>
+        <option value={"men's clothing"}>Men's clothing</option>
+        <option value={"women's clothing"}>Women's clothing</option>
       </select>
       <div className="fixed left-3 bottom-10">
         <button onClick={() => setOpen(true)}>
