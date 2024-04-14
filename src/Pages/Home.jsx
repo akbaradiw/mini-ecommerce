@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Component/Navbar";
-import { getProduct, filterProduct } from "../redux/features/productSlice";
+import { getProduct } from "../redux/features/productSlice";
 import Cart from "../Component/Cart";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
@@ -14,20 +14,15 @@ const Home = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState([]);
-  const [filter , setFilter] = useState([]);
+  const [thisfilter , setThisFilter] = useState("");
+  const [ search, setSearch] = useState("");
 
-// const handleOpen = () => {
-//   setOpen(!open);
-// }
 
-const handleFilter = (e) => {
-  dispatch(getProduct(e.target.value));
-  setFilter(e.target.value)
-}
 
   useEffect(() => {
     dispatch(getProduct());
   }, [cart]);
+  
 
   const addProduct = (data) => {
     const newProduct = {
@@ -65,7 +60,7 @@ const handleFilter = (e) => {
   return (
     <div>
       <Navbar/>
-      <select value={filter} className="fixed right-3 top-10" onChange={(e) => handleFilter(e.target.value)}>
+      <select  className="fixed right-3 top-10" onChange={(e) => setThisFilter(e.target.value)}>
         <option value={""}>All</option>
         <option value={"electronics"}>Electronics</option>
         <option value={"jewelery"}>Jewelery</option>
@@ -87,7 +82,11 @@ const handleFilter = (e) => {
         visibility={open}
          />
       <div className=" grid  gap-6 grid-cols-3 pt-24 pb-14 px-20">
-        {products.map((item) => (
+
+        {products.filter((item) =>
+          item.category.toLowerCase().includes(thisfilter.toLowerCase())
+        )
+        .map((item) => (
           <div
             className="border-2  border-cyan-400 rounded-lg py-6 px-5 m-1 "
             key={item.id}
