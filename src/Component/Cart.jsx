@@ -12,13 +12,7 @@ const Cart = ({
   handleQuantity,
   handleCategory,
 }) => {
-  const [modalOpen, setModalOpen] = React.useState(false);
-
   const notify = () => toast("Checkout Success!");
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
 
   return (
     <div
