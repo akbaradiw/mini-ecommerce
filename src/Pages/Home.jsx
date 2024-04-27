@@ -24,11 +24,8 @@ const Home = () => {
       ...data,
       qty: 1,
     };
-    alert("Added to cart");
-    toast.success("Added to cart");
     setCart([...cart, newProduct]);
-
-    console.log(data);
+    alert("Product added to cart");
   };
 
   const deleteProduct = (id) => {
@@ -61,7 +58,7 @@ const Home = () => {
           onChange={(e) => setThisFilter(e.target.value)}
           id="category"
         >
-          <option value={""}>All</option>
+          <option value={""}>Choose Category</option>
           <option value={"electronics"}>Electronics</option>
           <option value={"jewelery"}>Jewelery</option>
           <option value={"men's clothing"}>Men's clothing</option>
@@ -89,11 +86,14 @@ const Home = () => {
           )
           .map((item) => (
             <div
-              className="border-2  border-neutral-400 rounded-lg py-6 px-5 m-1"
+              className="border-2  border-neutral-400 rounded-lg py-6 px-5 m-1 shadow-lg shadow-neutral-400"
               key={item.id}
               id="card"
             >
-              <div className="divide-y divide-neutral-400" id="item">
+              <div
+                className="divide-y-2 divide-dashed divide-neutral-400"
+                id="item"
+              >
                 <div className="flex justify-center ">
                   <img
                     className=" h-40 mb-6  "
@@ -113,7 +113,7 @@ const Home = () => {
               </div>
               <button
                 onClick={() => addProduct(item)}
-                className="font-mono font-bold border-solid border-2 rounded-full px-2 mt-3 bg-neutral-400  border-black"
+                className="font-mono font-bold border-solid border-2 rounded-full px-2 mt-3 bg-gradient-to-r from-zinc-300 to-gray-400   border-black "
               >
                 Add to cart
               </button>

@@ -23,7 +23,8 @@
   }
   #category {
     font-size: 15px;
-    width: 40px;
+    margin-left: 10px;
+    margin-right: 120px;
   }
 
   #card {
