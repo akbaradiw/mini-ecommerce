@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MdPayment, MdOutlineSupportAgent } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 import { GrLike } from "react-icons/gr";
 import { AiOutlineDollar } from "react-icons/ai";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Superiority = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
-      {/* <h1 className="lg:text-2xl text-lg lg:pt-10 pt-5  text-center font-bold text-fuchsia-500">
-        Mengapa harus kami?
-      </h1> */}
-
-      <div className="lg:mt-10 mt-4 lg:pb-10 grid lg:grid-cols-5 text-center">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="lg:mt-10 mt-4 lg:pb-10 grid lg:grid-cols-5 text-center"
+      >
         <div className="border-b-2 border-fuchsia-500 mx-10 ">
           <div className="flex justify-center">
             <MdPayment className="lg:text-5xl text-3xl text-fuchsia-500" />

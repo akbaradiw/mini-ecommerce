@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import human from "../assets/people.png";
 import { MdFavorite } from "react-icons/md";
-import { GiHumanPyramid } from "react-icons/gi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const People = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="lg:flex  gap-10 my-20 w-full bg-gradient-to-r from-cyan-100 via-cyan-50 to-cyan-200 rounded-md shadow-md">
       <img
         src={human}
         alt="human"
         className="lg:w-80 px-20 lg:px-0 py-4  lg:ms-10 "
+        data-aos="fade-down"
+        data-duration="1000"
       />
-      <div className="lg:mt-10 lg:me-10 ">
+      <div
+        className="lg:mt-10 lg:me-10"
+        data-aos="fade-up"
+        data-duration="1000"
+      >
         <h1 className="lg:text-3xl text-xl text-center text-fuchsia-500 font-bold">
           10000+ Customer
         </h1>
