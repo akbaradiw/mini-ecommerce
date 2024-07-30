@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { BsCart3 } from "react-icons/bs";
+import Swal from "sweetalert2";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 import { MdFavorite } from "react-icons/md";
@@ -12,7 +13,15 @@ const CartComp = ({ product, deleteProduct, handleQuantity }) => {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-  const notify = () => toast("Checkout Success!");
+  const notify = () => {
+    Swal.fire({
+      position: "center",
+      icon: "warning",
+      title: "Pembelian gagal!  Silahkan login terlebih dahulu",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   return (
     <div>

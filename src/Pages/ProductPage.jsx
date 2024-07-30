@@ -7,6 +7,7 @@ import { GiShoppingCart } from "react-icons/gi";
 import CartComp from "../Component/CartComp";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Swal from "sweetalert2";
 
 const ProductPage = () => {
   const { products } = useSelector((state) => state.product);
@@ -30,7 +31,13 @@ const ProductPage = () => {
       qty: 1,
     };
     setCart([...cart, newProduct]);
-    alert("Product added to cart");
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Produk ditambahkan ke keranjang",
+      showConfirmButton: true,
+      timer: 1500,
+    });
   };
 
   const deleteProduct = (id) => {
@@ -39,6 +46,13 @@ const ProductPage = () => {
       if (productIndex !== -1) {
         oldState.splice(productIndex, 1);
       }
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Produk dihapus dari keranjang",
+        showConfirmButton: false,
+        timer: 500,
+      });
 
       return [...oldState];
     });

@@ -80,7 +80,7 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/login"
+                to={"/login"}
                 className="flex items-center flex-col justify-center md:text-2xl hover:text-cyan-200"
               >
                 <RiLoginBoxLine className="w-6 h-6 md:w-10 md:h-10  md:pb-2" />
@@ -89,7 +89,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/signup"
+                to={"/signup"}
                 className="flex items-center flex-col justify-center md:text-2xl  hover:hover:text-cyan-200"
               >
                 <FaCashRegister className="w-6 h-6 md:w-10 md:h-10  md:pb-2" />
