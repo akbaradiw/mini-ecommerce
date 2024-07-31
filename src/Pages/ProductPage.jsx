@@ -129,13 +129,13 @@ const ProductPage = () => {
               >
                 <div>
                   <button
-                    className="fixed ps-40 md:ps-60  lg:ps-60"
+                    className="fixed top-2 right-2"
                     onClick={() => addProduct(item)}
                   >
                     <GiShoppingCart className="text-3xl text-fuchsia-500 hover:-translate-y-2 hover:cursor-pointer hover:scale-90 transition ease-in-out delay-150" />
                   </button>
                   <img
-                    className=" w-20 md:w-40 lg:mb-6"
+                    className=" object-center hover:object-scale-down object-cover lg:h-40 h-60 rounded-lg"
                     src={item.image}
                     alt="store"
                     id="image"

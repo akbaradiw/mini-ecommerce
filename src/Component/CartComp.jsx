@@ -56,7 +56,10 @@ const CartComp = ({ product, deleteProduct, handleQuantity }) => {
               >
                 <div className="divide-y-2 divide-cyan-300  hover:translate-y-2 duration-200">
                   <div className="flex justify-center">
-                    <img className="w-40 " src={item.image} />
+                    <img
+                      className=" object-center hover:object-scale-down object-cover lg:h-40 h-60 rounded-lg"
+                      src={item.image}
+                    />
                   </div>
                   <h3 className="mt-6 text-center text-fuchsia-500">
                     {item.title}
