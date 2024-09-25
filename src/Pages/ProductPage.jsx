@@ -105,7 +105,7 @@ const ProductPage = () => {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10 px-6 xl:px-20 md:px-10 py-10 bg-white">
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-6  px-6 xl:px-20 md:px-10 py-10 bg-white">
         {products
           .filter((item) =>
             item.category.toLowerCase().includes(thisfilter.toLowerCase())
@@ -116,7 +116,7 @@ const ProductPage = () => {
               className="transition border-2 border-cyan-300 transform hover:scale-105 hover:shadow-xl rounded-lg overflow-hidden"
             >
               <img
-                className="w-full  p-6 h-80  xl:h-96 sm:h-48 md:h-80 lg:h-60 object-cover  rounded-t-lg"
+                className="w-full  p-6 h-80  2xl:h-96 sm:h-48 md:h-80 lg:h-60 object-cover  rounded-t-lg"
                 src={product.image}
                 alt={product.name}
               />
