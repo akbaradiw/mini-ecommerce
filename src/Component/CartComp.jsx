@@ -48,14 +48,14 @@ const CartComp = ({ product, deleteProduct, handleQuantity }) => {
             <MdFavorite className="text-3xl text-fuchsia-500" />
           </div>
 
-          <div className="font-mono grid lg:grid-cols-2 md:grid-cols-2 ">
+          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-10 py-10 ">
             {product.map((item) => (
               <div
-                className="lg:pb-10 pb-2 border-2 mx-4 shadow-md border-cyan-300 rounded-xl pt-4 mb-10 lg:mx-20"
+                className="transition border-2 border-cyan-300 transform hover:scale-105 hover:shadow-xl rounded-lg overflow-hidden"
                 key={item.id}
               >
                 <div className="divide-y-2 divide-cyan-300  hover:translate-y-2 duration-200">
-                  <div className="flex justify-center">
+                  <div className="flex justify-center pt-4">
                     <img
                       className=" object-center hover:object-scale-down object-cover lg:h-40 h-60 rounded-lg"
                       src={item.image}

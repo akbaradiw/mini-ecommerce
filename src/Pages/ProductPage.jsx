@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Component/Navbar";
 import { getProduct } from "../redux/features/productSlice";
-import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { GiShoppingCart } from "react-icons/gi";
 import CartComp from "../Component/CartComp";
 import AOS from "aos";
@@ -15,7 +14,6 @@ const ProductPage = () => {
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState([]);
   const [thisfilter, setThisFilter] = useState("");
-  const [openModal, setOpenModal] = useState(true);
 
   useEffect(() => {
     dispatch(getProduct());
@@ -72,99 +70,83 @@ const ProductPage = () => {
     <div>
       <Navbar />
 
-      <div className="lg:flex grid grid-cols-1 md:grid-cols-2 gap-3 lg:px-0 md:px-40 px-20 lg:justify-end pt-20 lg:pe-10 lg:gap-4">
+      {/* Filter Buttons */}
+      <div className="lg:flex grid grid-cols-1 md:grid-cols-2 gap-3 lg:px-0 md:px-40 px-6 lg:justify-end pt-20 lg:pe-10 lg:gap-4">
         <button
-          className="cursor-pointer  border border-none text-fuchsia-500 bg-cyan-200 font-semibold  py-1 px-3  hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
+          className="cursor-pointer border border-none text-fuchsia-500 bg-cyan-200 font-semibold py-1 px-3 hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
           onClick={() => setThisFilter("")}
-          s
         >
           All
         </button>
         <button
-          className="cursor-pointer  border border-none text-fuchsia-500 bg-cyan-200 font-semibold  py-1 px-3  hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
+          className="cursor-pointer border border-none text-fuchsia-500 bg-cyan-200 font-semibold py-1 px-3 hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
           onClick={() => setThisFilter("electronics")}
-          s
         >
           Electronics
         </button>
         <button
-          className="cursor-pointer  border border-none text-fuchsia-500 bg-cyan-200 font-semibold  py-1 px-3  hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
+          className="cursor-pointer border border-none text-fuchsia-500 bg-cyan-200 font-semibold py-1 px-3 hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
           onClick={() => setThisFilter("Jewelery")}
-          s
         >
           Jewelery
         </button>
         <button
-          className="cursor-pointer  border border-none text-fuchsia-500 bg-cyan-200 font-semibold  py-1 px-3  hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
+          className="cursor-pointer border border-none text-fuchsia-500 bg-cyan-200 font-semibold py-1 px-3 hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
           onClick={() => setThisFilter("men's clothing")}
-          s
         >
           Men's clothes
         </button>
         <button
-          className="cursor-pointer  border border-none text-fuchsia-500 bg-cyan-200 font-semibold  py-1 px-3  hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
+          className="cursor-pointer border border-none text-fuchsia-500 bg-cyan-200 font-semibold py-1 px-3 hover:bg-fuchsia-500 hover:text-cyan-200 shadow-sm rounded-lg"
           onClick={() => setThisFilter("women's clothing")}
-          s
         >
           Women's clothes
         </button>
       </div>
 
-      <div
-        className="grid  gap-6 lg:grid-cols-4 md:grid-cols-2 md:pt-10 lg:pt-12 pt-5 pb-14 lg:px-80 "
-        id="grid"
-      >
+      {/* Products Grid */}
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10 px-6 xl:px-20 md:px-10 py-10 bg-white">
         {products
           .filter((item) =>
             item.category.toLowerCase().includes(thisfilter.toLowerCase())
           )
-          .map((item) => (
-            <div data-aos="flip-down" data-aos-duration="1000">
-              <div
-                className="p-4 mx-16 lg:mx-0 md:mx-8 border-double border-4 hover:cursor-pointer hover:bg-cyan-50 border-fuchsia-500 rounded-lg "
-                key={item.id}
-                id="card"
-                data-aos="flip-down"
-                data-aos-duration="2000"
-              >
-                <div>
+          .map((product) => (
+            <div
+              key={product.id}
+              className="transition border-2 border-cyan-300 transform hover:scale-105 hover:shadow-xl rounded-lg overflow-hidden"
+            >
+              <img
+                className="w-full  p-6 h-80  xl:h-96 sm:h-48 md:h-80 lg:h-60 object-cover  rounded-t-lg"
+                src={product.image}
+                alt={product.name}
+              />
+
+              <div className="p-4 bg-white">
+                <h3 className="text-gray-900 font-bold text-lg md:text-xl lg:text-2xl mb-2">
+                  {product.name}
+                </h3>
+                <div className="flex justify-between  md:gap-4 items-center">
+                  <span className="text-lg md:text-xl font-semibold text-green-600">
+                    ${product.price}
+                  </span>
                   <button
-                    className="fixed top-2 right-2"
-                    onClick={() => addProduct(item)}
+                    onClick={() => addProduct(product)}
+                    className="bg-fuchsia-500 text-white px-2 py-1 md:px-1 md:py-2 rounded-lg text-sm md:text-base font-semibold hover:bg-white hover:text-fuchsia-500 border-2 border-fuchsia-500 transition"
                   >
-                    <GiShoppingCart className="text-3xl text-fuchsia-500 hover:-translate-y-2 hover:cursor-pointer hover:scale-90 transition ease-in-out delay-150" />
+                    Add to Cart
                   </button>
-                  <img
-                    className=" object-center hover:object-scale-down object-cover lg:h-40 h-60 rounded-lg"
-                    src={item.image}
-                    alt="store"
-                    id="image"
-                  />
                 </div>
-              </div>
-              <div className="border-4 mx-16 md:mx-8 lg:py-0 lg:mx-0 shadow-md border-double  bg-cyan-200  hover:cursor-pointer hover:bg-cyan-300  border-fuchsia-500 mt-3 rounded-lg">
-                <p className="lg:text-lg md:text-base text-sm ps-4 text-fuchsia-500  font-mono font-bold pb-3 pt-4 ">
-                  {item.title}
-                </p>
-                <p className="pt-3 pe-4 pb-2 text-fuchsia-500 text-end font-mono font-bold ">
-                  {" "}
-                  $ {item.price}
-                </p>
               </div>
             </div>
           ))}
       </div>
+
+      {/* Cart Component */}
       <CartComp
         product={cart}
         handleQuantity={handleQuantity}
         deleteProduct={deleteProduct}
       />
-      {/* <Button
-        className="fixed mt-20 right-10"
-        onClick={() => setOpenModal(true)}
-      >
-        Toggle modal
-      </Button> */}
     </div>
   );
 };

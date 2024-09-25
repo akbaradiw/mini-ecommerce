@@ -17,7 +17,7 @@ const Profil = () => {
       >
         <img src={logo} alt="logo" className="lg:w-96 w-60" />
       </div>
-      <div className="lg:flex grid lg:px-96 px-10">
+      <div className="md:grid-cols-2 grid lg:px-60 lg:pt-4 ">
         <img
           data-aos="flip-up"
           data-aos-duration="2000"
@@ -28,10 +28,9 @@ const Profil = () => {
         <div
           data-aos="flip-down"
           data-aos-duration="2000"
-          className="lg:pt-4 lg:ps-20"
+          className="lg:pt-4 "
         >
           <h1 className="lg:text-3xl text-xl font-bold pb-4 text-fuchsia-500">
-            YOUR TRUSTED E-COMMERCE
           </h1>
           <p className="text-fuchsia-500 pb-1 lg:text-xl text-sm font-medium">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id
