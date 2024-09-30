@@ -18,25 +18,25 @@ const Navbar = () => {
               <div className=" ml-10 flex items-baseline space-x-4">
                 <Link
                   to="/"
-                  className="text-white font-semibold  border-2 border-white bg-fuchsia-500 hover:bg-white hover:text-fuchsia-500 hover:border-fuchsia-500 px-3 py-2 rounded-md text-sm "
+                  className="text-white font-semibold  border-2 border-white bg-green-800 hover:bg-white hover:text-green-800 hover:border-green-800 px-3 py-2 rounded-md text-sm "
                 >
                   Home
                 </Link>
                 <Link
                   to="/products"
-                  className="hover:text-white font-semibold border-2 hover:border-white hover:bg-fuchsia-500 bg-white text-fuchsia-500  border-fuchsia-500 px-3 py-2 rounded-md text-sm "
+                  className="hover:text-white font-semibold border-2 hover:border-white hover:bg-green-800 bg-white text-green-800  border-green-800 px-3 py-2 rounded-md text-sm "
                 >
                   Products
                 </Link>
                 <Link
                   to="/login"
-                  className="text-white font-semibold  border-2 border-white bg-fuchsia-500 hover:bg-white hover:text-fuchsia-500 hover:border-fuchsia-500 px-3 py-2 rounded-md text-sm "
+                  className="text-white font-semibold  border-2 border-white bg-green-800 hover:bg-white hover:text-green-800 hover:border-green-800 px-3 py-2 rounded-md text-sm  "
                 >
                   Login
                 </Link>
                 <Link
                   to="/signup"
-                  className="hover:text-white font-semibold border-2 hover:border-white hover:bg-fuchsia-500 bg-white text-fuchsia-500  border-fuchsia-500 px-3 py-2 rounded-md text-sm "
+                  className="hover:text-white font-semibold border-2 hover:border-white hover:bg-green-800 bg-white text-green-800  border-green-800 px-3 py-2 rounded-md text-sm "
                 >
                   Sign Up
                 </Link>

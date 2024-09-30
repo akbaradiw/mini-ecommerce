@@ -1,59 +1,95 @@
 import React, { useEffect } from "react";
 import { NewProduct } from "../Data/NewProduct";
-import { MdFavorite } from "react-icons/md";
-import meichan2 from "../assets/meichan2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const NewArrival = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          initialSlide: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
+  };
   return (
-    <div className="lg:mt-20 mt-16 mb-4 lg:ms-20 ms-5 me-4">
-      <div
-        data-aos="fade-down"
-        data-aos-duration="1000"
-        className="flex justify-center lg:justify-start gap-4 lg:ms-20"
-      >
-        <MdFavorite className="lg:text-3xl text-xl text-cyan-200" />
-        <MdFavorite className="lg:text-3xl text-xl text-cyan-200" />
-        <h1 className="lg:text-3xl text-2xl lg:pb-6 pb-4 font-bold text-fuchsia-500">
-          NEW ARRIVALS
-        </h1>
-        <MdFavorite className="lg:text-3xl text-xl text-cyan-200" />
-        <MdFavorite className="lg:text-3xl text-xl text-cyan-200" />
-      </div>
-
-      <div className="lg:flex lg:justify-around">
-        <img
-          data-aos="flip-left"
-          src={meichan2}
-          alt="photo"
-          className="w-96 hidden lg:block bg-gradient-to-r from-cyan-200 via-cyan-100 to-cyan-50 shadow-md rounded-full"
-        />
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
-          {NewProduct.map((product) => (
-            <div data-aos="fade-down" data-aos-duration="2000" key={product.id}>
-              <div className="flex justify-center">
-                <img
-                  className="w-60 shadow-md  lg:p-2 border-double border-4 border-fuchsia-500 rounded-lg hover:-translate-y-2 hover:cursor-pointer hover:scale-90 transition ease-in-out delay-150"
-                  src={product.image}
-                />
-              </div>
-              <div className="border-4 mx-16 py-2 lg:py-0 lg:mx-0 shadow-md border-double  bg-cyan-200  hover:cursor-pointer hover:bg-cyan-300  border-fuchsia-500 mt-3 rounded-lg text-center">
-                <h1 className="lg:py-2 text-fuchsia-500 font-semibold ">
-                  {product.name}
-                </h1>
-                <p className="text-fuchsia-500 mb-1 font-semibold">
-                  $ {product.price}
-                </p>
-              </div>
+    <div style={{ backgroundColor: "#d5ffc2 " }} className="py-2 px-2 w-full" >
+      <h1 className="lg:text-3xl text-xl pb-4 text-center font-bold text-green-800">New Arrival</h1>
+      <Slider {...settings}>
+        {NewProduct.map((product) => (
+          <div data-aos="fade-up" data-aos-duration="2000" key={product.id}>
+            <div className="px-2">
+              <img
+                className="object-center   hover:object-scale-down object-cover h-60 w-80 rounded-md"
+                alt={product.name}
+                src={product.image}
+                width={300}
+                height={300}
+              />
             </div>
-          ))}
-        </div>
-      </div>
+            <div className=" mx-16 py-2 lg:py-0 lg:mx-0   text-center">
+              <h1 className="lg:py-2 text-green-800 font-semibold ">
+                {product.name}
+              </h1>
+              <p className="text-fuchsia-500 mb-1 font-semibold">
+                $ {product.price}
+              </p>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

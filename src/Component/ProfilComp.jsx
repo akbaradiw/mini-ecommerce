@@ -10,14 +10,14 @@ const ProfilComp = () => {
   }, []);
 
   return (
-    <section className="xl:p-20 p-5 bg-gradient-to-r from-cyan-200 via-cyan-100 to-cyan-50">
-      <div
+    <section className="xl:p-2 p-5 ">
+      {/* <div
         className="flex justify-center pb-2 lg:pt-0 pt-5 "
         data-aos="flip-up"
         data-aos-duration="2000"
       >
         <img src={logo} alt="logo" className="lg:w-96 w-60" />
-      </div>
+      </div> */}
       <div className=" pt-2  md:mb-4 grid  md:grid-cols-2 md:gap-10 ">
         <img
           src={hatamei}
@@ -29,7 +29,8 @@ const ProfilComp = () => {
           data-aos-duration="1000"
         />
 
-        <div className=" pt-14 ">
+
+        <div className=" pt-14 bg-green-800 w-full">
           <h1
             className="  lg:text-2xl text-center lg:mb-6 font-extrabold  py-1 px-1 text-fuchsia-500"
             data-aos="fade-up"
