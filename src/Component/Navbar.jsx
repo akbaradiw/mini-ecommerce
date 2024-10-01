@@ -11,37 +11,36 @@ const Navbar = () => {
   const toggle = () => setOpen(!open);
   return (
     <div>
-      <nav className=" bg-white shadow-sm w-full fixed z-50 hidden lg:block   ">
-        <div className="flex items-center justify-between h-16 ">
-          <div className="flex items-center">
-            <div>
-              <div className=" ml-10 flex items-baseline space-x-4">
-                <Link
-                  to="/"
-                  className="text-white font-semibold  border-2 border-white bg-green-800 hover:bg-white hover:text-green-800 hover:border-green-800 px-3 py-2 rounded-md text-sm "
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/products"
-                  className="hover:text-white font-semibold border-2 hover:border-white hover:bg-green-800 bg-white text-green-800  border-green-800 px-3 py-2 rounded-md text-sm "
-                >
-                  Products
-                </Link>
-                <Link
-                  to="/login"
-                  className="text-white font-semibold  border-2 border-white bg-green-800 hover:bg-white hover:text-green-800 hover:border-green-800 px-3 py-2 rounded-md text-sm  "
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/signup"
-                  className="hover:text-white font-semibold border-2 hover:border-white hover:bg-green-800 bg-white text-green-800  border-green-800 px-3 py-2 rounded-md text-sm "
-                >
-                  Sign Up
-                </Link>
-              </div>
-            </div>
+      <nav className=" bg-lime-50 pb-4 pt-4  shadow-md w-full fixed z-50 hidden lg:block   ">
+        <div className="">
+          <div className=" ml-10 flex justify-evenly px-20 ">
+            <Link
+              to="/"
+              className="font-semibold hover:text-lime-700 hover:underline hover:decoration-wavy  text-lg "
+            >
+              Home
+            </Link>
+            <Link
+              to="/products"
+              className=" font-semibold hover:text-lime-700 hover:underline hover:decoration-wavy text-lg "
+            >
+              Products
+            </Link>
+            <h1 className="font-extrabold font-system-ui text-green-800 italic text-2xl underline decoration-double">
+              Mini E-Commerce
+            </h1>
+            <Link
+              to="/login"
+              className=" font-semibold hover:text-lime-700 hover:underline hover:decoration-wavy  text-lg "
+            >
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              className="  font-semibold hover:text-lime-700 hover:underline hover:decoration-wavy  text-lg "
+            >
+              Sign Up
+            </Link>
           </div>
         </div>
       </nav>

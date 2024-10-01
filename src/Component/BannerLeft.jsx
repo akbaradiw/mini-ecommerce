@@ -1,8 +1,8 @@
 import woman from "../assets/caricari.jpg";
 const BannerLeft = () => {
   return (
-    <div>
-      <img src={woman} alt="woman" width="100%" />
+    <div className="flex justify-center">
+      <img src={woman} alt="woman" className="w-full max-w-screen-lg h-auto" />
     </div>
   );
 };

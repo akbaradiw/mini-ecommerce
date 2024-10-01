@@ -5,14 +5,14 @@ import Navbar from "../Component/Navbar";
 import Superiority from "../Component/Superiority";
 import BestSeller from "../Component/BestSeller";
 import NewArrival from "../Component/NewArrival";
-import People from "../Component/People";
+import Testimony from "../Component/Testimony";
 import Footer from "../Component/Footer";
 import Discount from "../Component/Discount";
 const Main = () => {
   return (
     <div>
       <Navbar />
-      <div className="grid grid-cols-2 pt-20">
+      <div className="grid grid-cols-2 pt-4">
         <BannerLeft />
         <BannerRight />
       </div>
@@ -22,7 +22,7 @@ const Main = () => {
 
       <Discount />
       <NewArrival />
-      <People />
+      <Testimony />
 
       <Footer />
     </div>

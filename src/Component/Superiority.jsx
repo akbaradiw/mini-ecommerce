@@ -10,7 +10,7 @@ const Superiority = () => {
     AOS.init();
   }, []);
   return (
-    <div >
+    <div className="p-6 bg-lime-50">
       <div
         data-aos="fade-up"
         data-aos-duration="1000"

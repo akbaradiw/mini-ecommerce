@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import "./App.css";
 import Main from "./Pages/Main.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductPage from "./Pages/ProductPage.jsx";
